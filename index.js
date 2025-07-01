@@ -9,6 +9,14 @@ app.use(express.json());
 app.post("/get-script", (req, res) => {
     const { key } = req.body;
 
+    app.get("/", (req, res) => {
+  res.send("✅ CPM Garage backend is up.");
+});
+
+app.get("/get-script", (req, res) => {
+  res.send("Use POST to access this endpoint securely.");
+});
+
     // You can replace this with real key auth later
     if (key !== "test-123") {
         return res.status(403).send("Invalid key");
